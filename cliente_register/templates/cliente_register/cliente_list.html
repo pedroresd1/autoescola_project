@@ -1,0 +1,46 @@
+{% extends "cliente_register/base.html" %}
+
+{% block content %}
+<p>Lista de Clientes da Auto Escola</p>
+
+<table class="table table-bordeless">
+    <thead class="border-botton font-weight-bold">
+        <tr>
+            <td>Nome Completo</td>
+            <td>Cpf</td>
+            <td>Telefone</td>
+            <td>Email</td>
+            <td>
+                <a href="{% url 'cliente_insert' %}" class="btn btn-outline-success">
+                    <i class="fa fa-plus" aria-hidden="true"></i>
+                    Novo Cliente
+                </a>
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        {% for cliente in cliente_list %}
+            <tr>
+                <td>{{cliente.fullname}}</td>                
+                <td>{{cliente.cpf}}</td>                
+                <td>{{cliente.telefone}}</td>                
+                <td>{{cliente.email}}</td>
+                <td>
+                    <a href="{% url 'cliente_update' cliente.id %}" class="btn text-secondary px-0">
+                        <i class="fa fa-pencil-square-o fa-1g"></i>
+                        
+                    </a>
+                    <form action="{% url 'cliente_delete' cliente.id %}" method="post" class="d-inline">
+                        {% csrf_token %}
+                        <button type="submit" class="btn">
+                            <i class="fa fa-trash fa-1g text-danger float-right"></i>
+                            
+                        </button>
+                    </form>
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock content %}

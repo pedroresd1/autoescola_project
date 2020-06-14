@@ -1,0 +1,19 @@
+ autoescola_project
+|
+0---| cliente_register (app folder)
+0---| ---| 
+0---| ---| migrations (includes files related to migrations)
+0---| ---| 
+0---| ---| templates
+0---| ---| ---| cliente_register
+0---| ---| ---| --base.html
+0---| ---| ---| --cliente_form.html
+0---| ---| ---| --cliente_list.html
+0---| --models.py
+0---| --forms.py
+0---| --urls.py
+0---| --views.py
+0
+0---| autoescola_project (project_folder)
+0---| --setting.py
+0---| --urls.py
