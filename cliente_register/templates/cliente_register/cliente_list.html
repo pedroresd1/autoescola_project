@@ -6,6 +6,18 @@
 <table class="table table-bordeless">
     <thead class="border-botton font-weight-bold">
         <tr>
+            <form method="GET" action="{% url 'cliente_list' %}" autocomplete="off">
+                <div class="input-group mb-3">
+                    <input id="search_box" type="search" name="search" class="form-control" placeholder="Pesquisar cliente..." aria-label="Search" aria-describedby="basic-addon2">
+                    <div class="input-group-append">                    
+                        <button id="search_submit" class="btn btn-outline-secondary" type="button" disabled>
+                            <i class="fa fa-search" aria-hidden="true"></i>    
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </tr>
+        <tr>
             <td>Nome Completo</td>
             <td>Cpf</td>
             <td>Telefone</td>
@@ -13,13 +25,14 @@
             <td>
                 <a href="{% url 'cliente_insert' %}" class="btn btn-outline-success">
                     <i class="fa fa-plus" aria-hidden="true"></i>
-                    Novo Cliente
+                    Cliente
                 </a>
             </td>
         </tr>
     </thead>
     <tbody>
         {% for cliente in cliente_list %}
+
             <tr>
                 <td>{{cliente.fullname}}</td>                
                 <td>{{cliente.cpf}}</td>                

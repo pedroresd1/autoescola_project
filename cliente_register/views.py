@@ -3,9 +3,19 @@ from .forms import ClienteForm
 from .models import Cliente
 
 # Create your views here.
+   
 
 def cliente_list(request):
-    context = {'cliente_list':Cliente.objects.all()}
+    
+    search_term = ''
+    context = {'cliente_list': Cliente.objects.all()}
+    if 'search' in request.GET:
+        search_term = request.GET['search']
+        if search_term is not None:
+            context = {'cliente_list': Cliente.objects.all().filter(fullname__icontains=search_term)}
+        else:
+            cliente
+        
     return render(request, "cliente_register/cliente_list.html", context)
 
 def cliente_form(request, id=0):
