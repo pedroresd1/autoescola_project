@@ -1,20 +1,38 @@
-{% extends "index/index.html" %}
 <!DOCTYPE html>
 <html lang='en'>
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=ed">
-        <title>Registro de Cliente</title>
+        <title>Index</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
         
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     </head>
     <body>
+        <div class="card-header">
+            <ul class="nav nav-tabs card-header-tabs">
+              <li class="nav-item">
+                <a class="nav-link" href="/index/">Index</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/cliente/list/"> Clientes</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" href="#">Em construcao</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" href="#">Em construcao</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" href="#">Em construcao</a>
+              </li>
+            </ul>
+          </div>
         <div class="container">
             <div class="col-md-10 offset-md-1 mt-5">
                 <div class="jumbotron">
-                    <h1 class="display-4">Registro de Clientes</h1>
+                    <h1 class="display-4">Projeto</h1>
                     <p class="lead font-italic">Python Django project for implementing CRUD operations.</p>
                     <hr class="my-4">
                     {% block content %}
